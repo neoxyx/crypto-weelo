@@ -23,18 +23,17 @@ class About extends React.Component {
         <span onClick={this.toggle}>About</span>
 
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader>What is Cryptoboard about?</ModalHeader>
+          <ModalHeader>What is Crypto Weelo about?</ModalHeader>
           <ModalBody>
             <p>
-              Hi there! I'm Marcos{" "}
+              Hi there! I'm Jhon{" "}
               <span role="img" aria-label="Hand">
                 👋
               </span>
-              I developed this site while learning React and researching the
-              cryptocurrency ecosystem.
+              I developed this site for test weelo.
             </p>
             <p>
-              Cryptoboard is a platform that allows you to monitor{" "}
+              Crypto Weelo is a platform that allows you to monitor{" "}
               <strong>
                 the price and variations of different cryptographic assets{" "}
               </strong>
@@ -45,7 +44,7 @@ class About extends React.Component {
               The code is open source and you could use it in your own
               development if you wish to. Here is the{" "}
               <a
-                href="https://github.com/marcosdellavecchia/crypto-dashboard"
+                href="https://github.com/neoxyx/crypto-weelo"
                 target="_blank"
                 rel="noopener noreferrer"
               >

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import About from "../components/About";
+import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
 import "../css/Header.css";
 
 const Header = () => {
@@ -9,12 +10,7 @@ const Header = () => {
       <section id="nav-bar">
         <nav className="navbar navbar-expand-lg navbar-light container header">
           <Link to="/">
-            <h1 className="navbar-brand title">
-              Cryptoboard Project{" "}
-              <span role="img" aria-label="Rocket">
-                🚀
-              </span>
-            </h1>
+            <h1 className="navbar-brand title">Crypto Weelo </h1>
           </Link>
           <button
             className="navbar-toggler"
@@ -35,24 +31,24 @@ const Header = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/exchanges">
-                  Exchanges
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className="nav-link"
-                  onClick={() =>
-                    alert("Oops! This feature is being developed :)")
-                  }
-                >
-                  Convert
-                </Link>
-              </li>
-              <li className="nav-item">
                 <span className="nav-link">
                   <About initialModalState={false} />
                 </span>
+              </li>
+              <li className="nav-item">
+                <Form>
+                  <FormGroup>
+                    <Input
+                      type="text"
+                      name="coin"
+                      id="coin"
+                      placeholder="Coin name"
+                    />
+                  </FormGroup>
+                </Form>
+              </li>&nbsp;&nbsp;
+              <li className="nav-item">
+                <Button>Search</Button>
               </li>
             </ul>
           </div>

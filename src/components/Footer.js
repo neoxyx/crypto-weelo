@@ -8,7 +8,7 @@ class Footer extends React.Component {
       <div className="footer-box">
         <div className="container footer-data">
           <div className="footer-item">
-            <h6>CRYPTOBOARD PROJECT</h6>
+            <h6>CRYPTO WEELO</h6>
 
             {/* Modal que abre la información del proyecto */}
 
@@ -17,7 +17,7 @@ class Footer extends React.Component {
             </span>
 
             <a
-              href="https://github.com/marcosdellavecchia/crypto-dashboard"
+              href="https://github.com/neoxyx/crypto-weelo"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -25,11 +25,11 @@ class Footer extends React.Component {
               Source code
             </a>
             <a
-              href="https://www.coingecko.com/api/documentations/v3"
+              href="https://api.coinlore.net/api/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              CoinGecko API
+              Coinlore API
             </a>
           </div>
 
@@ -37,21 +37,14 @@ class Footer extends React.Component {
             <h6>SOCIAL MEDIA</h6>
             <div className="social">
               <a
-                href="https://twitter.com/marcosdv"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fa fa-twitter fa-lg" aria-hidden="true"></i>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/marcos-dv/"
+                href="https://www.linkedin.com/in/jhon-jairo-valdés-aristizabal-917b7b59/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <i className="fa fa-linkedin fa-lg" aria-hidden="true"></i>
               </a>
               <a
-                href="https://github.com/marcosdellavecchia"
+                href="https://github.com/neoxyx"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -67,7 +60,7 @@ class Footer extends React.Component {
               <span role="img" aria-hidden="true">
                 💙
               </span>{" "}
-              by Marcos DV
+              by Jhon Valdés A
             </p>
           </div>
         </div>

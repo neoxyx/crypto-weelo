@@ -16,12 +16,10 @@ class Coins extends React.Component {
   }
 
   componentDidMount() {
-    axios
-      .get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd")
-      .then((res) => {
-        const cryptos = res.data;
-        this.setState({ cryptos: cryptos, loading: false });
-      });
+    axios.get("https://api.coinlore.net/api/tickers/").then((res) => {
+      const cryptos = res.data.data;
+      this.setState({ cryptos: cryptos, loading: false });
+    });
   }
 
   // Función que permite cargar más resultados de monedas
@@ -41,16 +39,11 @@ class Coins extends React.Component {
       <React.Fragment>
         {this.state.loading && <Loading />}
         <div className="container board-header">
-          <div className="col-md-2">Logo</div>
           <div id="coin-symbol" className="col-md-2">
             Symbol
           </div>
           <div className="col-md-2">Name</div>
           <div className="col-md-2">Price</div>
-          <div className="col-md-2">Variation (24h)</div>
-          <div id="coin-marketcap" className="col-md-2">
-            Capitalization
-          </div>
         </div>
         <div className="container board">
           {Object.keys(this.state.cryptos)
@@ -63,14 +56,8 @@ class Coins extends React.Component {
                 key={coin}
               >
                 <div className="cryptos">
-                  <div className="col-md-2 coin">
-                    <img
-                      src={this.state.cryptos[coin].image}
-                      alt="Crypto Icon"
-                    />
-                  </div>
                   <div id="coin-symbol" className="col-md-2 coin">
-                    <p>{this.state.cryptos[coin].symbol.toUpperCase()}</p>
+                    <p>{this.state.cryptos[coin].symbol}</p>
                   </div>
                   <div className="col-md-2 coin">
                     <p>{this.state.cryptos[coin].name.substring(0, 15)}</p>
@@ -78,7 +65,7 @@ class Coins extends React.Component {
                   <div className="col-md-2 coin">
                     <p>
                       <NumberFormat
-                        value={this.state.cryptos[coin].current_price}
+                        value={this.state.cryptos[coin].price_usd}
                         displayType={"text"}
                         thousandSeparator={"."}
                         decimalSeparator={","}
@@ -86,40 +73,7 @@ class Coins extends React.Component {
                         prefix={"$"}
                       />
                     </p>
-                  </div>
-                  <div className="col-md-2 coin">
-                    <p>
-                      <NumberFormat
-                        //Cambia el color según sea positivo o negativo
-                        style={{
-                          color:
-                            this.state.cryptos[coin]
-                              .price_change_percentage_24h > 0
-                              ? "green"
-                              : "red",
-                        }}
-                        value={
-                          this.state.cryptos[coin].price_change_percentage_24h
-                        }
-                        displayType={"text"}
-                        decimalSeparator={"."}
-                        decimalScale={2}
-                        suffix={"%"}
-                      />
-                    </p>
-                  </div>
-                  <div id="coin-marketcap" className="col-md-2 coin">
-                    <p>
-                      <NumberFormat
-                        value={this.state.cryptos[coin].market_cap}
-                        displayType={"text"}
-                        thousandSeparator={"."}
-                        decimalSeparator={","}
-                        decimalScale={2}
-                        prefix={"$"}
-                      />
-                    </p>
-                  </div>
+                  </div>                  
                 </div>
               </Link>
             ))}
