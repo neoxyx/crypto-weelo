@@ -21,7 +21,7 @@ Crypto Weelo es un tablero de criptomonedas con información de cripto-moneda en
 
 #### API utilizada:
 
-- Coinlore API v3: https://www.coinlore.com/cryptocurrency-data-api
+- Coinlore API: https://www.coinlore.com/cryptocurrency-data-api
 
 ### Instalación
 
